@@ -22,7 +22,7 @@
   <body>
     <div  class="flex justify-center content-center">
       <div class="hidden">K</div>
-      <div class="border border-gray-300 rounded-sm shadow-lg py-10 px-10 w-4/5 mt-10 mb-10">
+      <div class="border border-gray-300 rounded-sm shadow-lg py-4 px-4 sm:py-6 sm:px-6 md:py-8 md:px-8 lg:py-10 lg:px-10 w-full sm:w-11/12 md:w-5/6 lg:w-4/5 mt-2 mb-2 sm:mt-6 sm:mb-6 md:mt-10 md:mb-10">
         <header>
           <div class="hidden">z</div>
           <ul class="flex flex-wrap justify-end gap-2">
@@ -55,17 +55,17 @@
           </ul>
 
           <div class="hidden">E</div>
-          <div class="flex justify-between items-center">
+          <div class="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
             <div class="hidden">g</div>
-            <div>
+            <div class="flex-shrink-0">
               <div class="hidden">N</div>
-              <div class="bg-cover bg-no-repeat rounded-full h-52 w-52" style="background-image: url(./img/photo.jpg)"></div>
+              <div class="bg-cover bg-no-repeat rounded-full h-32 w-32 sm:h-40 sm:w-40 md:h-52 md:w-52" style="background-image: url(./img/photo.jpg)"></div>
             </div>
             <div class="hidden">z</div>
-            <div class="grid justify-items-end">
+            <div class="grid justify-items-center md:justify-items-end text-center md:text-right">
               <div class="hidden">A</div>
-              <h1 class="sm:text-2xl md:text-3xl lg:text-4xl font-extrabold">Andrei Kislichenko</h1>
-              <p class="text-xl mt-5">Senior Ruby Developer | API & Scalable Backend | Open to Senior Backend Engineer (Ruby/Rails)</p>
+              <h1 class="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-extrabold">Andrei Kislichenko</h1>
+              <p class="text-base sm:text-lg md:text-xl mt-3 md:mt-5">Senior Ruby Developer | API & Scalable Backend | Open to Senior Backend Engineer (Ruby/Rails)</p>
               <div class="hidden">0</div>
             </div>
             <div class="hidden">I</div>
@@ -74,9 +74,9 @@
         </header>
 
         <!-- detailed info -->
-        <main class="flex gap-x-10 mt-10">
+        <main class="flex flex-col md:flex-row gap-6 md:gap-x-10 mt-6 md:mt-10">
           <div class="hidden">g</div>
-          <div class="w-2/6">
+          <div class="w-full md:w-2/6">
 
             <!-- contact details -->
             <strong class="text-xl font-medium">Contact Details</strong>
@@ -91,7 +91,7 @@
               </li>
               <li class="px-2 mt-1"><strong class="mr-1">E-mail </strong>
                 <div class="hidden">A</div>
-                <a href="mailto:slogans.taverns07@icloud.com?subject=Ruby developer role" class="block sm:text-xs md:text-base">slogans.taverns07@icloud.com</a>
+                <a href="mailto:slogans.taverns07@icloud.com?subject=Ruby developer role" class="block text-sm md:text-base break-all">slogans.taverns07@icloud.com</a>
               </li>
               <li class="px-2 mt-1"><strong class="mr-1">Location</strong><span class="block">Charlotte, US</span></li>
             </ul>
@@ -100,7 +100,7 @@
             <!-- github stats -->
             <strong class="text-xl font-medium ">Github Stats</strong>
             <div class="hidden">O</div>
-            <img class="sm:-ml-2 md:-ml-3 mb-10 mt-2" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=andrew2net&theme=default" alt="GitHub Stats">
+            <img class="w-full sm:-ml-2 md:-ml-3 mb-10 mt-2" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=andrew2net&theme=default" alt="GitHub Stats">
 
             <!-- skills -->
             <div class="hidden">T</div>
@@ -147,7 +147,7 @@
           </div>
 
           <!-- info -->
-          <div class="w-4/6">
+          <div class="w-full md:w-4/6">
             <section>
               <!-- about me -->
               <h2 class="text-2xl pb-1 border-b font-semibold">About</h2>
@@ -162,9 +162,9 @@
               <h2 class="text-2xl mt-6 pb-1 border-b font-semibold">Projects</h2>
               <ul class="mt-1">
                 <li class="py-2">
-                  <div class="flex justify-between my-1">
+                  <div class="flex flex-col sm:flex-row justify-between my-1 gap-2">
                     <strong>CISCO/Meraki Dashboard</strong>
-                    <p class="flex">
+                    <p class="flex flex-wrap gap-1">
                       <span class="bg-gray-600 text-white px-2 py-1 ml-1 text-xs rounded">RoR</span>
                       <span class="bg-gray-600 text-white px-2 py-1 ml-1 text-xs rounded">REST API</span>
                       <span class="bg-gray-600 text-white px-2 py-1 ml-1 text-xs rounded">SQL</span>
@@ -179,9 +179,9 @@
                 </li>
                 </li>
                 <li class="py-2">
-                  <div class="flex justify-between my-1">
+                  <div class="flex flex-col sm:flex-row justify-between my-1 gap-2">
                     <strong>Relaton</strong>
-                    <p class="flex">
+                    <p class="flex flex-wrap gap-1">
                       <span class="bg-gray-600 text-white px-2 py-1 ml-1 text-xs rounded">Ruby</span>
                       <span class="bg-gray-600 text-white px-2 py-1 ml-1 text-xs rounded">XML</span>
                       <span class="bg-gray-600 text-white px-2 py-1 ml-1 text-xs rounded">XPath</span>
@@ -196,9 +196,9 @@
                     The standards' bibliographic data is handled by series of gems, which are used by Relaton to generate bibliographic data in various formats.</p>
                 </li>
                 <li class="py-2">
-                  <div class="flex justify-between my-1">
+                  <div class="flex flex-col sm:flex-row justify-between my-1 gap-2">
                     <strong>Ruck.us</strong>
-                    <p class="flex">
+                    <p class="flex flex-wrap gap-1">
                       <span class="bg-gray-600 text-white px-2 py-1 ml-1 text-xs rounded">RoR</span>
                       <span class="bg-gray-600 text-white px-2 py-1 ml-1 text-xs rounded">SQL</span>
                       <span class="bg-gray-600 text-white px-2 py-1 ml-1 text-xs rounded">HTML</span>
@@ -213,9 +213,9 @@
                     It's a simple, powerful, and easy-to-use tools to supercharge a campaign and build an online community.</p>
                 </li>
                 <li class="py-2">
-                  <div class="flex justify-between my-1">
+                  <div class="flex flex-col sm:flex-row justify-between my-1 gap-2">
                     <strong>Portus API</strong>
-                    <p class="flex">
+                    <p class="flex flex-wrap gap-1">
                       <span class="bg-gray-600 text-white px-2 py-1 ml-1 text-xs rounded">RoR</span>
                       <span class="bg-gray-600 text-white px-2 py-1 ml-1 text-xs rounded">SQL</span>
                       <span class="bg-gray-600 text-white px-2 py-1 ml-1 text-xs rounded">REST API</span>
@@ -230,9 +230,9 @@
                     </p>
                 </li>
                 <li class="py-2">
-                  <div class="flex justify-between my-1">
+                  <div class="flex flex-col sm:flex-row justify-between my-1 gap-2">
                     <strong>Portus OAuth</strong>
-                    <p class="flex">
+                    <p class="flex flex-wrap gap-1">
                       <span class="bg-gray-600 text-white px-2 py-1 ml-1 text-xs rounded">RoR</span>
                       <span class="bg-gray-600 text-white px-2 py-1 ml-1 text-xs rounded">HTML</span>
                       <span class="bg-gray-600 text-white px-2 py-1 ml-1 text-xs rounded">CSS</span>
