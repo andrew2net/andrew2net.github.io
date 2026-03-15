@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   setupReveal(
     document.getElementById('hidenemail'), 'e', 'andr... ',
-    function (val) { return 'mailto:' + val + '?subject=Ruby developer role'; }
+    function (val) { return 'mailto:' + val + '?subject=Project Inquiry'; }
   );
 
   // Sticky nav shadow
