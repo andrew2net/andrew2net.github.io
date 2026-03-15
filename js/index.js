@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
       link.classList.add('text-blue-400');
       if (hint) hint.remove();
       wrapper.onclick = null;
+      wrapper.removeAttribute('title');
       wrapper.style.cursor = '';
     };
     wrapper.style.cursor = 'pointer';
