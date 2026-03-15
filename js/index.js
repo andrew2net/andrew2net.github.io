@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+  // Contact reveal logic
   function decode(group) {
     var elms = document.querySelectorAll('[data-g="' + group + '"]');
     return window.atob([].slice.call(elms).map(function(el) { return el.innerText; }).join(''));
@@ -12,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function () {
       var value = decode(group);
       link.innerText = value;
       link.href = buildHref(value);
-      link.classList.remove('bg-gradient-to-r');
-      link.classList.add('bg-blue-600');
+      link.classList.remove('text-transparent', 'bg-clip-text', 'bg-gradient-to-r', 'from-blue-400', 'to-slate-900', 'hover:text-transparent', 'visited:text-transparent');
+      link.classList.add('text-blue-400');
       if (hint) hint.remove();
       wrapper.onclick = null;
       wrapper.style.cursor = '';
@@ -31,4 +32,34 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('hidenemail'), 'e', 'andr... ',
     function (val) { return 'mailto:' + val + '?subject=Ruby developer role'; }
   );
+
+  // Sticky nav shadow
+  var navbar = document.getElementById('navbar');
+  if (navbar) {
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 10) {
+        navbar.classList.add('nav-scrolled');
+      } else {
+        navbar.classList.remove('nav-scrolled');
+      }
+    });
+  }
+
+  // Fade-in on scroll
+  var fadeEls = document.querySelectorAll('.fade-in');
+  if (fadeEls.length && 'IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    fadeEls.forEach(function (el) { observer.observe(el); });
+  } else {
+    // Fallback: show everything
+    fadeEls.forEach(function (el) { el.classList.add('visible'); });
+  }
 });

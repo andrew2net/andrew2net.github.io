@@ -2,22 +2,87 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* Nav links */
+.nav-link {
+  @apply text-gray-300 no-underline font-medium transition-colors;
+}
+
+.nav-link:hover {
+  @apply text-blue-400;
+}
+
+.nav-link:visited {
+  @apply text-gray-300;
+}
+
+/* General links */
 a {
-  @apply text-blue-600 underline
+  @apply text-blue-600 underline;
 }
 
 a:hover {
-  @apply text-blue-400
+  @apply text-blue-400;
 }
 
 a:visited {
-  @apply text-purple-600
+  @apply text-blue-700;
 }
 
-.btn-blue, .btn-blue:visited {
-  @apply bg-blue-600 text-white px-2 py-1 mr-1 text-sm rounded no-underline
+/* Section styling */
+.section-padding {
+  @apply py-20;
 }
 
-.btn-blue:hover {
-  @apply bg-blue-500 text-white
+.section-title {
+  @apply text-3xl font-bold text-center;
+}
+
+/* Skill pills */
+.skill-pill {
+  @apply bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-medium border border-blue-200;
+}
+
+/* Tech tags on project cards */
+.tech-tag {
+  @apply bg-slate-100 text-slate-600 px-2 py-1 text-xs rounded font-medium;
+}
+
+/* Project cards */
+.project-card {
+  @apply bg-white rounded-xl p-6 shadow-sm border border-gray-100 transition-shadow hover:shadow-lg;
+}
+
+/* Primary button */
+.btn-primary, .btn-primary:visited {
+  @apply bg-blue-600 text-white px-4 py-2 text-sm rounded-lg no-underline font-semibold transition-colors;
+}
+
+.btn-primary:hover {
+  @apply bg-blue-500 text-white;
+}
+
+/* Timeline items */
+.timeline-item {
+  @apply border-l-4 border-blue-600 pl-6 pb-10 ml-2;
+}
+
+/* Nav shadow on scroll */
+.nav-scrolled {
+  @apply shadow-lg;
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
