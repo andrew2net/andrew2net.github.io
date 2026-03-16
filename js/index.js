@@ -55,6 +55,21 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Section view tracking
+  var sections = document.querySelectorAll('section[id], footer[id]');
+  if (sections.length && 'IntersectionObserver' in window) {
+    var sectionObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting && typeof gtag === 'function') {
+          gtag('event', 'section_view', { section_name: entry.target.id });
+          sectionObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    sections.forEach(function (section) { sectionObserver.observe(section); });
+  }
+
   // Fade-in on scroll
   var fadeEls = document.querySelectorAll('.fade-in');
   if (fadeEls.length && 'IntersectionObserver' in window) {
