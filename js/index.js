@@ -19,6 +19,15 @@ document.addEventListener('DOMContentLoaded', function () {
       wrapper.onclick = null;
       wrapper.removeAttribute('title');
       wrapper.style.cursor = '';
+      var method = group === 'p' ? 'phone' : 'email';
+      if (typeof gtag === 'function') {
+        gtag('event', method + '_reveal');
+      }
+      link.addEventListener('click', function () {
+        if (typeof gtag === 'function') {
+          gtag('event', method + '_click');
+        }
+      });
     };
     wrapper.style.cursor = 'pointer';
     wrapper.onclick = reveal;
