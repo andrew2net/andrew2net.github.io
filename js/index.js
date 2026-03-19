@@ -85,6 +85,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  // Social link click tracking
+  var socialLinks = document.querySelectorAll('#social-links a[data-social]');
+  socialLinks.forEach(function (link) {
+    link.addEventListener('click', function () {
+      if (typeof gtag === 'function') {
+        gtag('event', 'social_click', {
+          platform: link.dataset.social
+        });
+      }
+    });
+  });
+
   // Fade-in on scroll
   var fadeEls = document.querySelectorAll('.fade-in');
   if (fadeEls.length && 'IntersectionObserver' in window) {
