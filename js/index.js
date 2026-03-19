@@ -70,6 +70,21 @@ document.addEventListener('DOMContentLoaded', function () {
     sections.forEach(function (section) { sectionObserver.observe(section); });
   }
 
+  // Portfolio button click tracking
+  var portfolioLinks = document.querySelectorAll('#portfolio .btn-primary');
+  portfolioLinks.forEach(function (link) {
+    link.addEventListener('click', function () {
+      if (typeof gtag === 'function') {
+        var card = link.closest('.project-card');
+        var projectName = card ? card.querySelector('h3').textContent : 'unknown';
+        gtag('event', 'portfolio_click', {
+          project_name: projectName,
+          link_text: link.textContent.trim()
+        });
+      }
+    });
+  });
+
   // Fade-in on scroll
   var fadeEls = document.querySelectorAll('.fade-in');
   if (fadeEls.length && 'IntersectionObserver' in window) {
