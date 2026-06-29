@@ -114,4 +114,21 @@ document.addEventListener('DOMContentLoaded', function () {
     // Fallback: show everything
     fadeEls.forEach(function (el) { el.classList.add('visible'); });
   }
+
+  // Cookie consent banner
+  var banner = document.getElementById('cookie-banner');
+  if (banner && !localStorage.getItem('cookie_consent')) {
+    banner.classList.remove('hidden');
+  }
+  function setConsent(value) {
+    localStorage.setItem('cookie_consent', value);
+    if (value === 'granted' && typeof gtag === 'function') {
+      gtag('consent', 'update', { analytics_storage: 'granted' });
+    }
+    if (banner) banner.classList.add('hidden');
+  }
+  var acceptBtn = document.getElementById('cookie-accept');
+  var declineBtn = document.getElementById('cookie-decline');
+  if (acceptBtn) acceptBtn.addEventListener('click', function () { setConsent('granted'); });
+  if (declineBtn) declineBtn.addEventListener('click', function () { setConsent('denied'); });
 });

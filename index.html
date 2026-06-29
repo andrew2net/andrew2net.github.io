@@ -44,15 +44,28 @@
     <link rel="stylesheet" href="./css/style.css?v=4">
     <link rel="preconnect" href="https://rsms.me">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-    <script src="./js/index.js?v=4" defer></script>
+    <script src="./js/index.js?v=5" defer></script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-57Z9C78MJ4"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
+      // Consent Mode v2 — deny everything until the visitor opts in
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied'
+      });
+
+      // Re-apply a previously stored "granted" choice on repeat visits
+      if (localStorage.getItem('cookie_consent') === 'granted') {
+        gtag('consent', 'update', { analytics_storage: 'granted' });
+      }
+
+      gtag('js', new Date());
       gtag('config', 'G-57Z9C78MJ4');
     </script>
   </head>
@@ -443,5 +456,19 @@
         <p class="text-center text-gray-400 text-lg italic">"The best way to predict the future is to build it."</p>
       </div>
     </footer>
+
+    <!-- Cookie consent banner -->
+    <div id="cookie-banner" class="hidden fixed bottom-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur text-white px-6 py-4">
+      <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center gap-4 justify-between">
+        <p class="text-sm m-0">
+          This site uses cookies for anonymous Google Analytics to understand how visitors use it.
+          No data is collected until you accept. You can decline at any time.
+        </p>
+        <div class="flex gap-3 shrink-0">
+          <button id="cookie-decline" class="px-4 py-2 text-sm rounded border border-white/40 text-white hover:bg-white/10">Decline</button>
+          <button id="cookie-accept" class="btn-primary px-4 py-2 text-sm rounded">Accept</button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
