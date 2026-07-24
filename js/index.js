@@ -122,8 +122,10 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   function setConsent(value) {
     localStorage.setItem('cookie_consent', value);
-    if (value === 'granted' && typeof gtag === 'function') {
-      gtag('consent', 'update', { analytics_storage: 'granted' });
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', {
+        analytics_storage: value === 'granted' ? 'granted' : 'denied'
+      });
     }
     if (banner) banner.classList.add('hidden');
   }
