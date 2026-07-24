@@ -41,10 +41,10 @@
     }
     </script>
 
-    <link rel="stylesheet" href="./css/style.css?v=4">
+    <link rel="stylesheet" href="./css/style.css?v=5">
     <link rel="preconnect" href="https://rsms.me">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-    <script src="./js/index.js?v=6" defer></script>
+    <script src="./js/index.js?v=7" defer></script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-57Z9C78MJ4"></script>
@@ -81,6 +81,20 @@
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           <a href="#hero" class="text-white font-bold text-xl no-underline hover:no-underline visited:text-white hover:text-blue-400">Home</a>
           <div class="hidden md:flex gap-8">
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#portfolio" class="nav-link">Portfolio</a>
+            <a href="#testimonials" class="nav-link">Testimonials</a>
+            <a href="#process" class="nav-link">Process</a>
+            <a href="#contact" class="nav-link">Contact</a>
+          </div>
+          <button id="nav-toggle" type="button" class="md:hidden text-gray-300 hover:text-blue-400 p-2 -mr-2" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-t border-slate-800">
+          <div class="px-6 py-4 flex flex-col gap-4">
             <a href="#services" class="nav-link">Services</a>
             <a href="#portfolio" class="nav-link">Portfolio</a>
             <a href="#testimonials" class="nav-link">Testimonials</a>
