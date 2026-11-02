@@ -2,101 +2,470 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 96px;
+  }
+
+  body {
+    @apply bg-ink text-paper font-sans antialiased;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  ::selection {
+    @apply bg-lime text-ink;
+  }
 }
 
-/* Nav links */
-.nav-link {
-  @apply text-gray-300 no-underline font-medium transition-colors;
+@layer components {
+  /* Nav */
+  .nav-link {
+    @apply px-3 py-3 text-sm text-soft transition-colors;
+  }
+
+  .nav-link:hover {
+    @apply text-lime;
+  }
+
+  .nav-scrolled {
+    @apply shadow-2xl shadow-black/60;
+  }
+
+  /* Text */
+  .eyebrow {
+    @apply font-mono text-sm text-lime;
+  }
+
+  .section-heading {
+    @apply font-display font-extrabold leading-[0.9] tracking-[-0.045em] text-[clamp(48px,7vw,104px)];
+  }
+
+  /* Section header row: eyebrow and heading on the left, side text on the right */
+  .section-head {
+    @apply mb-12 flex flex-wrap items-end justify-between gap-6 md:mb-16;
+  }
+
+  .section-lead {
+    @apply max-w-[360px] text-base leading-relaxed text-muted;
+  }
+
+  .on-paper .eyebrow,
+  .on-paper .section-lead {
+    @apply text-dim;
+  }
+
+  .text-link {
+    @apply underline decoration-1 underline-offset-4 transition-colors;
+  }
+
+  .text-link:hover {
+    @apply text-lime;
+  }
+
+  .on-paper .text-link:hover {
+    @apply text-dim;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex min-h-[56px] items-center gap-2.5 rounded-full px-7 text-base font-semibold transition-colors;
+  }
+
+  .btn-light {
+    @apply bg-paper text-ink;
+  }
+
+  .btn-light:hover {
+    @apply bg-lime;
+  }
+
+  .btn-lime {
+    @apply bg-lime text-ink;
+  }
+
+  .btn-lime:hover {
+    @apply bg-paper;
+  }
+
+  .btn-outline {
+    @apply border border-line2 text-paper;
+  }
+
+  .btn-outline:hover {
+    @apply border-lime text-lime;
+  }
+
+  /* Project link buttons. Analytics reads "#portfolio .btn-primary". */
+  .btn-primary {
+    @apply inline-flex min-h-[44px] items-center gap-1.5 rounded-full border border-line2 px-[18px] text-sm font-medium text-paper transition-colors;
+  }
+
+  .btn-primary:hover {
+    @apply border-lime text-lime;
+  }
+
+  .featured-lime .btn-primary {
+    @apply min-h-[48px] border-ink bg-ink px-[22px] text-[15px] font-semibold text-paper;
+  }
+
+  .featured-lime .btn-primary:hover {
+    @apply bg-panel text-lime;
+  }
+
+  /* Pills and tags */
+  .chip {
+    @apply rounded-full border border-line2 px-3.5 py-2 text-sm text-paper;
+  }
+
+  .tech-tags {
+    @apply font-mono text-xs text-muted;
+  }
+
+  /* Project cards */
+  .project-card {
+    @apply relative flex flex-col gap-5 overflow-hidden rounded-3xl border border-line bg-panel p-6 md:p-8 transition-colors;
+  }
+
+  /* Project card label row: number on the left, type on the right */
+  .card-meta {
+    @apply flex items-center justify-between gap-3 font-mono;
+  }
+
+  .card-num {
+    @apply text-[13px] text-muted;
+  }
+
+  .card-kind {
+    @apply text-xs text-lime;
+  }
+
+  .featured-lime .card-num,
+  .featured-lime .card-kind {
+    @apply text-ink;
+  }
+
+  /* Project book: large pages for the main projects */
+  .book-skip {
+    @apply mb-8 inline-flex min-h-[44px] items-center gap-2 font-mono text-sm text-muted transition-colors;
+  }
+
+  .book-skip:hover {
+    @apply text-lime;
+  }
+
+  .book-page {
+    @apply relative overflow-hidden rounded-[28px] border border-line bg-panel p-6 md:p-10;
+  }
+
+  .book-page.featured-lime {
+    @apply border-transparent bg-lime text-ink;
+  }
+
+  .book-page-inner {
+    @apply grid gap-8 lg:grid-cols-12 lg:items-center;
+  }
+
+  .book-text {
+    @apply flex flex-col gap-5 lg:col-span-5;
+  }
+
+  .book-title {
+    @apply font-display text-[clamp(36px,4vw,56px)] font-extrabold leading-[0.95] tracking-[-0.035em];
+  }
+
+  .book-desc {
+    @apply text-[17px] leading-relaxed text-soft;
+  }
+
+  .featured-lime .book-desc,
+  .featured-lime .tech-tags {
+    @apply text-ink;
+  }
+
+  .book-shot {
+    @apply order-first m-0 flex flex-col overflow-hidden rounded-2xl border border-line bg-ink lg:order-none lg:col-span-7;
+  }
+
+  .featured-lime .book-shot {
+    @apply border-ink/20;
+  }
+
+  .book-shot img {
+    @apply block h-auto w-full;
+  }
+
+  .book-shot-bar {
+    @apply flex gap-2 border-b border-line px-4 py-3;
+  }
+
+  .book-shot-bar span {
+    @apply h-2.5 w-2.5 rounded-full bg-line2;
+  }
+
+  .book-shot-phone {
+    @apply items-center justify-center bg-ink py-6;
+  }
+
+  .book-shot-phone img {
+    @apply max-h-[560px] w-auto;
+  }
+
+  .more-heading {
+    @apply mb-8 mt-24 font-display text-[clamp(32px,4vw,48px)] font-extrabold leading-none tracking-[-0.035em];
+  }
+
+  /* Project screenshot or cover image */
+  .project-shot {
+    @apply block aspect-[16/10] w-full rounded-2xl border border-line bg-ink object-cover object-top;
+  }
+
+  .featured-lime .project-shot {
+    @apply border-ink/20;
+  }
+
+  .project-card:hover {
+    @apply border-lime;
+  }
+
+  .project-card.featured {
+    @apply gap-7 rounded-[28px] p-6 md:p-9;
+  }
+
+  .project-card.featured-lime {
+    @apply border-transparent bg-lime text-ink;
+  }
+
+  .project-card.featured-lime:hover {
+    @apply border-ink;
+  }
+
+  /* Stats */
+  .stat-value {
+    @apply font-display text-[64px] font-extrabold leading-none tracking-[-0.03em];
+  }
+
+  /* Marquee */
+  .marquee-track {
+    animation: marquee 38s linear infinite;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .pulse-dot {
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
+  }
+
+  /* Contact reveal. The value is hidden until the visitor clicks. */
+  .contact-pill {
+    @apply inline-flex min-h-[56px] cursor-pointer items-center gap-2.5 rounded-full border border-line2 px-6 transition-colors;
+  }
+
+  .contact-pill:hover {
+    @apply border-lime;
+  }
+
+  .contact-masked {
+    @apply bg-gradient-to-r from-lime to-ink bg-clip-text font-semibold text-transparent;
+  }
+
+  .contact-revealed {
+    @apply font-semibold text-lime;
+  }
 }
 
-.nav-link:hover {
-  @apply text-blue-400;
-}
-
-.nav-link:visited {
-  @apply text-gray-300;
-}
-
-/* General links */
-a {
-  @apply text-blue-600 underline;
-}
-
-a:hover {
-  @apply text-blue-400;
-}
-
-a:visited {
-  @apply text-blue-700;
-}
-
-/* Section styling */
-.section-padding {
-  @apply py-20;
-}
-
-.section-title {
-  @apply text-3xl font-bold text-center;
-}
-
-/* Skill pills */
-.skill-pill {
-  @apply bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-medium border border-blue-200;
-}
-
-/* Tech tags on project cards */
-.tech-tag {
-  @apply bg-slate-100 text-slate-600 px-2 py-1 text-xs rounded font-medium;
-}
-
-/* Project cards */
-.project-card {
-  @apply bg-white rounded-xl p-6 shadow-sm border border-gray-100 transition-shadow hover:shadow-lg;
-}
-
-/* Primary button */
-.btn-primary, .btn-primary:visited {
-  @apply bg-blue-600 text-white px-4 py-2 text-sm rounded-lg no-underline font-semibold transition-colors;
-}
-
-.btn-primary:hover {
-  @apply bg-blue-500 text-white;
-}
-
-/* Secondary (outline) button */
-.btn-secondary, .btn-secondary:visited {
-  @apply inline-block border-2 border-blue-500 text-blue-300 px-8 py-3 rounded-lg text-lg no-underline font-semibold transition-colors;
-}
-
-.btn-secondary:hover {
-  @apply bg-blue-500/10 text-white;
-}
-
-/* Timeline items */
-.timeline-item {
-  @apply border-l-4 border-blue-600 pl-6 pb-10 ml-2;
-}
-
-/* Nav shadow on scroll */
-.nav-scrolled {
-  @apply shadow-lg;
-}
-
-/* Fade-in animation */
-.fade-in {
+/* Fade-in on scroll */
+.js .fade-in {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease-out, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
 }
 
-.fade-in.visible {
+.js .fade-in.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
-/* Testimonial cards */
-.testimonial-card {
-  @apply bg-white rounded-xl p-6 shadow-sm border-l-4 border-blue-600;
+/* Project cards: a book page turns over on scroll.
+   The card turns on its left edge, like a page on its spine.
+   The cards are hidden only when JS runs, so they stay visible without JS. */
+.js .reveal-card {
+  opacity: 0;
+  transform-origin: left center;
+  transform: perspective(1600px) rotateY(-92deg);
+  backface-visibility: hidden;
+  transition:
+    opacity 0.35s ease-out,
+    transform 1.2s cubic-bezier(0.2, 0.75, 0.25, 1),
+    border-color 0.2s,
+    background-color 0.2s;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+/* The shadow on the turning page. It fades out as the page lies flat. */
+.js .reveal-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.65) 100%);
+  opacity: 1;
+  transition: opacity 1.2s ease-out;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.js .reveal-card.visible {
+  opacity: 1;
+  transform: perspective(1600px) rotateY(0deg);
+}
+
+.js .reveal-card.visible::after {
+  opacity: 0;
+}
+
+/* The hover lift starts after the page turn ends. */
+.js .reveal-card.visible:hover {
+  transform: perspective(1600px) translateY(-6px);
+  transition-delay: 0ms;
+}
+
+/* Project book. Without the "is-active" class (small screens, reduced motion,
+   no JS) the pages are a normal list of large cards. */
+.book-pages {
+  display: grid;
+  gap: 24px;
+}
+
+.book-dots {
+  display: none;
+}
+
+/* The stage (the pages and the dots) scrolls up with the page until it is centered
+   in the window. Then it stays there while the pages turn. On short windows it stays
+   below the menu bar. The stage is the page height plus 60px for the dots. */
+.book.is-active {
+  margin-top: 8px;
+}
+
+.book.is-active .book-stage {
+  position: sticky;
+  top: max(96px, calc((100vh - min(620px, 100vh - 190px) - 60px) / 2));
+}
+
+.book.is-active .book-pages {
+  display: block;
+  position: relative;
+  height: min(620px, calc(100vh - 190px));
+}
+
+/* Each page turns on its left edge, like a page on a book spine.
+   --turn goes from 0 (flat) to 1 (turned over). --rise lifts the next page into place. */
+.book.is-active .book-page {
+  position: absolute;
+  inset: 0;
+  transform-origin: left center;
+  transform: perspective(2400px) rotateY(calc(var(--turn, 0) * -100deg)) scale(calc(0.94 + 0.06 * var(--rise, 1)));
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+.book.is-active .book-page::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+  opacity: calc(var(--turn, 0) * 1.2);
+}
+
+.book.is-active .book-page-inner,
+.book.is-active .book-shot {
+  height: 100%;
+}
+
+.book.is-active .book-shot img {
+  flex: 1;
+  min-height: 0;
+  height: 100%;
+  object-fit: cover;
+  object-position: left top;
+}
+
+.book.is-active .book-shot-fit img {
+  object-fit: contain;
+  object-position: center;
+}
+
+.book.is-active .book-shot-phone img {
+  width: auto;
+  max-height: none;
+  object-fit: contain;
+  object-position: center;
+}
+
+.book.is-active .book-dots {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 16px;
+}
+
+.book-dot {
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-dot::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #3A3A40;
+  transition: width 0.3s, background-color 0.3s;
+}
+
+.book-dot[aria-current="true"]::before {
+  width: 28px;
+  background: #C8F031;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .js .fade-in,
+  .js .reveal-card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .js .reveal-card::after {
+    display: none;
+  }
+
+  .marquee-track,
+  .pulse-dot {
+    animation: none;
+  }
 }

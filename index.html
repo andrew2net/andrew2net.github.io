@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andrei Kislichenko — Senior Software Engineer</title>
     <meta name="description" content="Senior Software Engineer with 10+ years building full-stack web applications, APIs, and data platforms. Projects, experience, and contact.">
+    <meta name="theme-color" content="#0B0B0C">
 
     <!-- Microsoft Bing Webmaster Tools verification -->
     <meta name="msvalidate.01" content="BE509232F5B9417724AAEEF2893F4F03">
@@ -52,6 +53,8 @@
         "JavaScript",
         "TypeScript",
         "React",
+        "Python",
+        "LLM agents",
         "Docker",
         "AWS"
       ],
@@ -64,8 +67,14 @@
     }
     </script>
 
-    <link rel="stylesheet" href="./css/style.css?v=6">
-    <script src="./js/index.js?v=7" defer></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+
+    <script>document.documentElement.classList.add('js');</script>
+    <link rel="stylesheet" href="./css/style.css?v=26">
+    <script src="./js/index.js?v=23" defer></script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-57Z9C78MJ4"></script>
@@ -91,31 +100,36 @@
     </script>
   </head>
 
-  <body class="bg-white text-gray-800">
+  <body class="overflow-x-hidden">
     <div class="hidden" data-g="p">K</div>
     <div class="hidden" data-g="e">Y</div>
     <div class="hidden" data-g="e">W</div>
 
     <!-- Nav -->
-    <header>
-      <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur transition-shadow">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-          <a href="#hero" class="text-white font-bold text-xl no-underline hover:no-underline visited:text-white hover:text-blue-400">Home</a>
-          <div class="hidden md:flex gap-8">
+    <header class="fixed inset-x-0 top-0 z-50 px-4 pt-4">
+      <nav id="navbar" aria-label="Main" class="mx-auto max-w-6xl rounded-[28px] border border-line bg-panel/80 backdrop-blur-xl transition-shadow">
+        <div class="flex items-center justify-between gap-3 py-2 pl-5 pr-2">
+          <a href="#hero" class="font-display text-xl font-extrabold tracking-tight" aria-label="Andrei Kislichenko, home">AK<span class="text-lime">.</span></a>
+          <div class="hidden md:flex md:gap-1">
             <a href="#about" class="nav-link">About</a>
             <a href="#portfolio" class="nav-link">Projects</a>
             <a href="#experience" class="nav-link">Experience</a>
             <a href="#testimonials" class="nav-link">Recommendations</a>
-            <a href="#contact" class="nav-link">Contact</a>
           </div>
-          <button id="nav-toggle" type="button" class="md:hidden text-gray-300 hover:text-blue-400 p-2 -mr-2" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
+          <div class="flex items-center gap-1">
+            <a href="#contact" class="inline-flex min-h-[44px] items-center gap-2.5 rounded-full bg-lime px-5 text-sm font-semibold text-ink transition-colors hover:bg-paper">
+              <span class="pulse-dot h-2 w-2 rounded-full bg-ink" aria-hidden="true"></span>
+              Open to work
+            </a>
+            <button id="nav-toggle" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-full text-soft hover:text-lime md:hidden" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-t border-slate-800">
-          <div class="px-6 py-4 flex flex-col gap-4">
+        <div id="mobile-menu" class="hidden border-t border-line md:hidden">
+          <div class="flex flex-col px-3 py-2">
             <a href="#about" class="nav-link">About</a>
             <a href="#portfolio" class="nav-link">Projects</a>
             <a href="#experience" class="nav-link">Experience</a>
@@ -132,319 +146,476 @@
 
     <main>
     <!-- Hero -->
-    <section id="hero" class="bg-slate-900 text-white pt-32 pb-20 md:pt-40 md:pb-28">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="hidden" data-g="p">E</div>
-        <div class="hidden" data-g="e">c</div>
-        <div class="hidden" data-g="e">m</div>
-        <div class="flex flex-col md:flex-row items-center gap-10">
-          <div class="hidden" data-g="p">g</div>
-          <div class="hidden" data-g="e">V</div>
-          <div class="hidden" data-g="e">p</div>
-          <div class="shrink-0">
-            <div class="hidden" data-g="p">N</div>
-            <div class="hidden" data-g="e">L</div>
-            <div class="hidden" data-g="e">m</div>
-            <img src="./img/photo.jpg" alt="Andrei Kislichenko, Senior Software Engineer" width="208" height="208" class="w-40 h-40 md:w-52 md:h-52 rounded-full ring-4 ring-blue-500/50">
+    <section id="hero" class="mx-auto max-w-6xl px-6 pb-16 pt-36 md:pt-44">
+      <p class="mb-8 font-mono text-sm text-muted">// Senior Software Engineer · Full-stack web apps &amp; APIs · Charlotte, US</p>
+      <div class="hidden" data-g="p">E</div>
+      <div class="hidden" data-g="e">c</div>
+      <div class="hidden" data-g="e">m</div>
+      <div class="flex flex-col gap-12 md:flex-row md:items-end">
+        <h1 class="min-w-0 flex-1 font-display text-[clamp(56px,11vw,160px)] font-extrabold leading-[0.88] tracking-[-0.045em]">Andrei<br>Kislichenko<span class="text-lime">.</span></h1>
+        <div class="hidden" data-g="p">g</div>
+        <div class="hidden" data-g="e">V</div>
+        <div class="hidden" data-g="e">p</div>
+        <div class="relative w-full max-w-[300px] shrink-0 self-center md:self-end">
+          <img src="./img/photo.jpg" alt="Andrei Kislichenko, Senior Software Engineer" width="600" height="600" class="aspect-[4/5] w-full rounded-[28px] object-cover grayscale">
+          <div class="absolute -right-4 bottom-6 rotate-[4deg] rounded-2xl bg-lime px-4 py-3 text-ink">
+            <div class="font-display text-[34px] font-extrabold leading-none">10+</div>
+            <div class="mt-1 font-mono text-xs">years shipping</div>
           </div>
-          <div class="hidden" data-g="p">z</div>
-          <div class="hidden" data-g="e">t</div>
-          <div class="hidden" data-g="e">p</div>
-          <div class="text-center md:text-left">
-            <div class="hidden" data-g="p">A</div>
-            <div class="hidden" data-g="e">c</div>
-            <div class="hidden" data-g="e">2</div>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">Andrei Kislichenko</h1>
-            <p class="text-xl md:text-2xl mt-4 text-gray-300">Senior Software Engineer · Full-Stack Web Applications &amp; APIs</p>
-            <p class="text-lg mt-2 text-gray-400">10+ years building full-stack web applications, APIs, and data platforms.</p>
-            <div class="hidden" data-g="p">0</div>
-            <div class="hidden" data-g="e">x</div>
-            <div class="hidden" data-g="e">p</div>
-            <div class="mt-8 flex flex-wrap justify-center md:justify-start gap-4">
-              <a href="#portfolio" class="inline-block bg-blue-600 hover:bg-blue-500 text-white font-semibold px-8 py-3 rounded-lg text-lg no-underline hover:no-underline visited:text-white transition-colors">View Projects</a>
-              <a href="#contact" class="btn-secondary">Contact Me</a>
-            </div>
-          </div>
-          <div class="hidden" data-g="p">I</div>
-          <div class="hidden" data-g="e">Y</div>
-          <div class="hidden" data-g="e">2</div>
         </div>
       </div>
-      <div class="hidden" data-g="p">D</div>
-      <div class="hidden" data-g="e">h</div>
-      <div class="hidden" data-g="e">l</div>
+      <div class="hidden" data-g="p">N</div>
+      <div class="hidden" data-g="e">L</div>
+      <div class="hidden" data-g="e">m</div>
+      <div class="mt-16 flex flex-wrap items-center justify-between gap-8 border-t border-line pt-8">
+        <p class="max-w-[620px] flex-[1_1_420px] text-xl leading-relaxed text-soft md:text-[22px]">I build full-stack web applications, APIs, and data platforms. I own the work from problem discovery through production.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="#portfolio" class="btn btn-light">View projects
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-outline">Contact me</a>
+        </div>
+      </div>
     </section>
 
+    <div class="hidden" data-g="p">z</div>
+    <div class="hidden" data-g="e">t</div>
+    <div class="hidden" data-g="e">p</div>
+
+    <!-- Highlights -->
+    <section aria-label="Highlights" class="mx-auto max-w-6xl px-6 pb-24">
+      <div class="grid gap-px overflow-hidden rounded-[28px] border border-line bg-line sm:grid-cols-2 lg:grid-cols-4" data-stagger>
+        <div class="bg-ink p-8">
+          <div class="fade-in">
+            <div class="stat-value">400k<span class="text-lime">+</span></div>
+            <p class="mt-3 text-[15px] text-muted">downloads of my open-source Ruby gems</p>
+          </div>
+        </div>
+        <div class="bg-ink p-8">
+          <div class="fade-in">
+            <div class="stat-value">600k<span class="text-lime">+</span></div>
+            <p class="mt-3 text-[15px] text-muted">standards documents through my ETL pipelines</p>
+          </div>
+        </div>
+        <div class="bg-ink p-8">
+          <div class="fade-in">
+            <div class="stat-value">10<span class="text-lime">×</span></div>
+            <p class="mt-3 text-[15px] text-muted">faster bulk route updates for Cisco Meraki</p>
+          </div>
+        </div>
+        <div class="bg-ink p-8">
+          <div class="fade-in">
+            <div class="stat-value">5<span class="text-lime">×</span></div>
+            <p class="mt-3 text-[15px] text-muted">faster metadata retrieval with concurrency</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech stack marquee (decorative; the same list is in the About section) -->
+    <div class="overflow-hidden border-y border-line py-7" aria-hidden="true">
+      <div class="marquee-track flex w-max whitespace-nowrap font-display text-4xl font-bold tracking-tight md:text-5xl">
+        <div class="flex shrink-0 items-center gap-12 pr-12">
+          <span>Ruby</span><span class="text-lime">✦</span><span class="text-dim">Ruby on Rails</span><span class="text-lime">✦</span><span>PostgreSQL</span><span class="text-lime">✦</span><span class="text-dim">TypeScript</span><span class="text-lime">✦</span><span>React</span><span class="text-lime">✦</span><span class="text-dim">REST APIs</span><span class="text-lime">✦</span><span>Python</span><span class="text-lime">✦</span><span class="text-dim">Docker</span><span class="text-lime">✦</span><span>AWS</span><span class="text-lime">✦</span><span class="text-dim">RSpec</span><span class="text-lime">✦</span>
+        </div>
+        <div class="flex shrink-0 items-center gap-12 pr-12">
+          <span>Ruby</span><span class="text-lime">✦</span><span class="text-dim">Ruby on Rails</span><span class="text-lime">✦</span><span>PostgreSQL</span><span class="text-lime">✦</span><span class="text-dim">TypeScript</span><span class="text-lime">✦</span><span>React</span><span class="text-lime">✦</span><span class="text-dim">REST APIs</span><span class="text-lime">✦</span><span>Python</span><span class="text-lime">✦</span><span class="text-dim">Docker</span><span class="text-lime">✦</span><span>AWS</span><span class="text-lime">✦</span><span class="text-dim">RSpec</span><span class="text-lime">✦</span>
+        </div>
+      </div>
+    </div>
+
     <!-- About -->
-    <section id="about" class="section-padding bg-white">
-      <div class="max-w-6xl mx-auto px-6">
-        <h2 class="section-title">About</h2>
+    <section id="about" class="mx-auto max-w-6xl px-6 py-28 md:py-32">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow mb-6">01 — About</p>
+          <h2 class="section-heading">How I work</h2>
+        </div>
+        <p class="section-lead">Senior engineer. Ruby on Rails, APIs, and data platforms.</p>
+      </div>
+      <div class="hidden" data-g="p">A</div>
+      <div class="hidden" data-g="e">c</div>
+      <div class="hidden" data-g="e">2</div>
+      <div class="flex flex-wrap gap-16">
+        <div class="fade-in min-w-0 flex-[999_1_560px]">
+          <p class="font-display text-[clamp(28px,3.4vw,44px)] font-bold leading-[1.05] tracking-[-0.03em]">Clean domain models. Fast databases. Software that <span class="text-lime">ships</span> and stays reliable.</p>
+          <div class="mt-10 flex max-w-[680px] flex-col gap-5 text-lg leading-relaxed text-soft">
+            <p>Software Developer with 10+ years of experience building and maintaining scalable full-stack web applications, APIs, and data-driven systems. I specialize in Ruby on Rails, API design, and pragmatic system architecture that balances performance, maintainability, and business needs.</p>
+            <p>I have led and contributed to projects used at scale, including open-source Ruby gems with hundreds of thousands of downloads. My work typically involves designing clean domain models, improving legacy codebases, optimizing database performance, and collaborating closely with product and frontend teams.</p>
+            <p>I value clear ownership, thoughtful refactoring, and shipping reliable software. I am comfortable working in complex systems, mentoring engineers, and taking responsibility from problem discovery through production.</p>
+          </div>
+        </div>
+        <div class="hidden" data-g="p">0</div>
+        <div class="hidden" data-g="e">x</div>
+        <div class="hidden" data-g="e">p</div>
+        <aside class="fade-in flex flex-[1_1_300px] flex-col gap-4">
+          <div class="rounded-3xl border border-line bg-panel p-7">
+            <h3 class="mb-4 font-mono text-[13px] font-medium uppercase tracking-[0.08em] text-muted">Skills</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="chip">Ruby</span>
+              <span class="chip">Ruby on Rails</span>
+              <span class="chip">PostgreSQL / MySQL</span>
+              <span class="chip">REST API</span>
+              <span class="chip">RSpec</span>
+              <span class="chip">JavaScript / TypeScript</span>
+              <span class="chip">React</span>
+              <span class="chip">Python</span>
+              <span class="chip">LLM agents</span>
+              <span class="chip">Docker</span>
+              <span class="chip">AWS</span>
+            </div>
+          </div>
+          <div class="rounded-3xl border border-line bg-panel p-7">
+            <h3 class="mb-4 font-mono text-[13px] font-medium uppercase tracking-[0.08em] text-muted">Languages</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="chip">English</span>
+              <span class="chip">Russian · Native</span>
+            </div>
+          </div>
+          <div class="rounded-3xl bg-lime p-7 text-ink">
+            <p class="font-display text-2xl font-bold leading-tight tracking-[-0.02em]">Currently open to Senior Software Engineer or product-focused full-stack roles.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="hidden" data-g="p">I</div>
+    <div class="hidden" data-g="e">Y</div>
+    <div class="hidden" data-g="e">2</div>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="pb-28 md:pb-32">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow mb-6">02 — Selected work</p>
+            <h2 class="section-heading">Projects</h2>
+          </div>
+          <p class="section-lead">SaaS products, open-source tools, AI agents, and enterprise platforms. From idea to production.</p>
+        </div>
+        <a href="#more-projects" class="book-skip">Skip to all projects
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+        </a>
+      </div>
+
+      <!-- Project book: on large screens, each page turns over on scroll. Elsewhere it is a list of large cards. -->
+      <div id="project-book" class="book">
+        <div class="book-stage">
+          <div class="mx-auto w-full max-w-6xl px-6">
+            <div class="book-pages">
+
+              <!-- Ledgerly -->
+              <article class="book-page featured-lime">
+                <div class="book-page-inner">
+                  <div class="book-text">
+                    <div class="card-meta">
+                      <span class="card-num">01</span>
+                      <span class="card-kind">Live product</span>
+                    </div>
+                    <h3 class="book-title">Small Business Accounting</h3>
+                    <p class="book-desc">Simple accounting app for small companies. Covers invoices, bills, expenses, and a double-entry ledger. Generates profit and loss, balance sheet, and trial balance reports.</p>
+                    <p class="tech-tags">React · TypeScript · Hono · Cloudflare D1</p>
+                    <div class="flex flex-wrap gap-2">
+                      <a href="https://ledgerly.crew-desk.com" target="_blank" rel="noopener" class="btn-primary">Visit website
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+                      </a>
+                    </div>
+                  </div>
+                  <figure class="book-shot">
+                    <div class="book-shot-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+                    <img src="./img/projects/book-ledgerly.webp" alt="Ledgerly dashboard: net income, open receivables, overdue invoices, an income and expenses chart, and bank accounts" width="1660" height="840" loading="lazy" decoding="async">
+                  </figure>
+                </div>
+              </article>
+
+              <!-- Crew-Desk -->
+              <article class="book-page">
+                <div class="book-page-inner">
+                  <div class="book-text">
+                    <div class="card-meta">
+                      <span class="card-num">02</span>
+                      <span class="card-kind">Live product</span>
+                    </div>
+                    <h3 class="book-title">Field Service SaaS</h3>
+                    <p class="book-desc">Cloud-based field service management platform for small trade businesses (plumbing, electrical, HVAC, landscaping). Handles job tracking from quote to payment, dispatch scheduling, Stripe invoicing, and automated SMS appointment reminders.</p>
+                    <p class="tech-tags">Rails · Stripe · SQL · Stimulus</p>
+                    <div class="flex flex-wrap gap-2">
+                      <a href="https://crew-desk.com" target="_blank" rel="noopener" class="btn-primary">Visit website
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+                      </a>
+                    </div>
+                  </div>
+                  <figure class="book-shot book-shot-phone">
+                    <img src="./img/projects/book-crewdesk.webp?v=2" alt="Crew-Desk on a phone: the messages list with appointment reminder texts and their delivery status" width="564" height="1204" loading="lazy" decoding="async">
+                  </figure>
+                </div>
+              </article>
+
+              <!-- Ghost data deletion audit -->
+              <article class="book-page">
+                <div class="book-page-inner">
+                  <div class="book-text">
+                    <div class="card-meta">
+                      <span class="card-num">03</span>
+                      <span class="card-kind">AI agent</span>
+                    </div>
+                    <h3 class="book-title">AI Deletion-Audit Agent</h3>
+                    <p class="book-desc">Python agent that checks if personal data is really deleted. Reads SQL, logs, JSON, PDFs, and screenshots, applies deletion rules, and writes an ordered remediation plan. Uses Claude with cached, deterministic results.</p>
+                    <p class="tech-tags">Python · Claude API · LLM agents · OCR</p>
+                    <div class="flex flex-wrap gap-2">
+                      <a href="https://github.com/andrew2net/ghost-data-deletion-audit" target="_blank" rel="noopener" class="btn-primary">Project</a>
+                    </div>
+                  </div>
+                  <figure class="book-shot book-shot-fit">
+                    <img src="./img/projects/book-ai-agent.webp" alt="Agent pipeline in six steps: intent, identity, evidence, state, policy, plan" width="1600" height="1000" loading="lazy" decoding="async">
+                  </figure>
+                </div>
+              </article>
+
+              <!-- Rails Schema -->
+              <article class="book-page">
+                <div class="book-page-inner">
+                  <div class="book-text">
+                    <div class="card-meta">
+                      <span class="card-num">04</span>
+                      <span class="card-kind">Open source</span>
+                    </div>
+                    <h3 class="book-title">Database Visualization Tool</h3>
+                    <p class="book-desc">Built an interactive schema visualization tool for Rails developers. Introspects models, associations, and columns, then generates a self-contained HTML entity-relationship diagram.</p>
+                    <p class="tech-tags">Rails · HTML · CSS · JavaScript</p>
+                    <div class="flex flex-wrap gap-2">
+                      <a href="https://github.com/andrew2net/rails-schema" target="_blank" rel="noopener" class="btn-primary">Project</a>
+                      <a href="https://andrew2net.github.io/rails-schema/" target="_blank" rel="noopener" class="btn-primary">Example</a>
+                    </div>
+                  </div>
+                  <figure class="book-shot">
+                    <div class="book-shot-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+                    <img src="./img/projects/book-rails-schema.webp?v=4" alt="Interactive entity-relationship diagram of six Rails models: Account, Board, Card, Column, Comment, and User, with their associations" width="1400" height="1207" loading="lazy" decoding="async" style="object-position: center">
+                  </figure>
+                </div>
+              </article>
+
+            </div>
+            <nav class="book-dots" aria-label="Project pages">
+              <button type="button" class="book-dot" aria-label="Page 1: Small Business Accounting"></button>
+              <button type="button" class="book-dot" aria-label="Page 2: Field Service SaaS"></button>
+              <button type="button" class="book-dot" aria-label="Page 3: AI Deletion-Audit Agent"></button>
+              <button type="button" class="book-dot" aria-label="Page 4: Database Visualization Tool"></button>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="mx-auto max-w-6xl px-6">
+      <h3 id="more-projects" class="more-heading">More projects</h3>
+
+      <!-- Other work -->
+      <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+
+        <!-- CISCO/Meraki -->
+        <article class="project-card reveal-card">
+          <img src="./img/projects/meraki.webp?v=2" alt="Bulk route updates 10 times faster: N+1 queries replaced by one batched query and caching" width="1200" height="750" loading="lazy" decoding="async" class="project-shot">
+          <div class="card-meta">
+            <span class="card-num">05</span>
+            <span class="card-kind">Enterprise</span>
+          </div>
+          <h3 class="font-display text-[28px] font-bold leading-[1.05] tracking-[-0.025em]">Enterprise Network Dashboard</h3>
+          <p class="flex-grow text-[15px] leading-relaxed text-soft">Cloud-based management platform for Cisco enterprise customers. Achieved 10× performance improvement on bulk route updates by eliminating N+1 queries and implementing caching.</p>
+          <p class="tech-tags">Rails · REST API · SQL · Git</p>
+        </article>
+
+        <!-- Relaton -->
+        <article class="project-card reveal-card">
+          <img src="./img/projects/relaton.webp?v=3" alt="Standards data cover: 600k+ documents, 400k+ gem downloads, 5 times faster retrieval" width="1200" height="750" loading="lazy" decoding="async" class="project-shot">
+          <div class="card-meta">
+            <span class="card-num">06</span>
+            <span class="card-kind">Data platform</span>
+          </div>
+          <h3 class="font-display text-[28px] font-bold leading-[1.05] tracking-[-0.025em]">Standards Data Platform</h3>
+          <p class="flex-grow text-[15px] leading-relaxed text-soft">ETL pipelines processing 600k+ documents for an international standards organization. Delivered open-source gems downloaded 400k+ times with 5× faster data retrieval.</p>
+          <p class="tech-tags">Ruby · XML · XPath · RegEx</p>
+          <div class="flex flex-wrap gap-2">
+            <a href="https://github.com/relaton" target="_blank" rel="noopener" class="btn-primary">Project</a>
+            <a href="https://www.relaton.org" target="_blank" rel="noopener" class="btn-primary">Spec</a>
+          </div>
+        </article>
+
+        <!-- Ruck.us -->
+        <article class="project-card reveal-card">
+          <img src="./img/projects/ruckus.webp?v=2" alt="Campaign toolbox features: Stripe payments, Twilio SMS, OAuth login" width="1200" height="750" loading="lazy" decoding="async" class="project-shot">
+          <div class="card-meta">
+            <span class="card-num">07</span>
+            <span class="card-kind">SaaS</span>
+          </div>
+          <h3 class="font-display text-[28px] font-bold leading-[1.05] tracking-[-0.025em]">Political Campaign SaaS</h3>
+          <p class="flex-grow text-[15px] leading-relaxed text-soft">Cost-effective digital toolbox for state and local political campaigns. Full-stack SaaS application with Stripe payments, Twilio messaging, and OAuth integration.</p>
+          <p class="tech-tags">Rails · SQL · HTML · CSS · JavaScript</p>
+          <div class="flex flex-wrap gap-2">
+            <a href="https://github.com/andrew2net/ruckus" target="_blank" rel="noopener" class="btn-primary">Project</a>
+          </div>
+        </article>
+
+        <!-- Portus API -->
+        <article class="project-card reveal-card">
+          <img src="./img/projects/portus-api.webp?v=2" alt="Portus REST API endpoints for users and application tokens" width="1200" height="750" loading="lazy" decoding="async" class="project-shot">
+          <div class="card-meta">
+            <span class="card-num">08</span>
+            <span class="card-kind">Open source</span>
+          </div>
+          <h3 class="font-display text-[28px] font-bold leading-[1.05] tracking-[-0.025em]">Docker Registry API</h3>
+          <p class="flex-grow text-[15px] leading-relaxed text-soft">REST API for the open-source Docker registry authorization server Portus. Designed and implemented endpoints for user and token management with Swagger documentation.</p>
+          <p class="tech-tags">Rails · SQL · REST API · Swagger</p>
+          <div class="flex flex-wrap gap-2">
+            <a href="https://github.com/SUSE/Portus/pull/1299" target="_blank" rel="noopener" class="btn-primary">Project</a>
+          </div>
+        </article>
+
+        <!-- Portus OAuth -->
+        <article class="project-card reveal-card">
+          <img src="./img/projects/portus-oauth.webp?v=2" alt="Social login cover: sign-in with Google, GitHub, GitLab, Bitbucket, OpenID Connect, plus domain and team restrictions" width="1200" height="750" loading="lazy" decoding="async" class="project-shot">
+          <div class="card-meta">
+            <span class="card-num">09</span>
+            <span class="card-kind">Open source</span>
+          </div>
+          <h3 class="font-display text-[28px] font-bold leading-[1.05] tracking-[-0.025em]">Social Login Integration</h3>
+          <p class="flex-grow text-[15px] leading-relaxed text-soft">OAuth/OpenID implementation for the enterprise Docker platform Portus. Added social login support with a Vue.js settings interface.</p>
+          <p class="tech-tags">Rails · HTML · CSS · OAuth · Vue.js</p>
+          <div class="flex flex-wrap gap-2">
+            <a href="https://github.com/SUSE/Portus/pull/1300" target="_blank" rel="noopener" class="btn-primary">Project</a>
+          </div>
+        </article>
+
+      </div>
+      </div>
+    </section>
+
+    <div class="hidden" data-g="p">D</div>
+    <div class="hidden" data-g="e">h</div>
+    <div class="hidden" data-g="e">l</div>
+
+    <!-- Experience -->
+    <section id="experience" class="on-paper rounded-t-[40px] bg-paper px-6 py-28 text-ink md:py-32">
+      <div class="mx-auto max-w-6xl">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow mb-6">03 — Experience</p>
+            <h2 class="section-heading">Where I built</h2>
+          </div>
+          <p class="section-lead">10+ years of full-stack web applications, APIs, and data platforms.</p>
+        </div>
         <div class="hidden" data-g="p">g</div>
         <div class="hidden" data-g="e">b</div>
         <div class="hidden" data-g="e">m</div>
-        <div class="grid md:grid-cols-3 gap-10 mt-10">
-          <div class="md:col-span-2 fade-in">
-            <p class="text-lg leading-relaxed">Software Developer with 10+ years of experience building and maintaining scalable full-stack web applications, APIs, and data-driven systems. I specialize in Ruby on Rails, API design, and pragmatic system architecture that balances performance, maintainability, and business needs.</p>
-            <p class="mt-4 text-lg leading-relaxed">I have led and contributed to projects used at scale, including open-source Ruby gems with hundreds of thousands of downloads. My work typically involves designing clean domain models, improving legacy codebases, optimizing database performance, and collaborating closely with product and frontend teams.</p>
-            <p class="mt-4 text-lg leading-relaxed">I value clear ownership, thoughtful refactoring, and shipping reliable software. I am comfortable working in complex systems, mentoring engineers, and taking responsibility from problem discovery through production.</p>
-            <p class="mt-4 text-lg leading-relaxed text-blue-600 font-medium">Currently open to Senior Software Engineer or Product-focused Full-Stack roles.</p>
+
+        <div class="fade-in flex flex-wrap gap-8 border-t border-ink py-10">
+          <div class="flex-[1_1_280px]">
+            <h3 class="font-display text-4xl font-extrabold leading-none tracking-[-0.03em]">GlobalLogic</h3>
+            <p class="mt-3 font-semibold">Senior Software Engineer</p>
+            <p class="mt-1 font-mono text-[13px] text-dim">Santa Clara, CA</p>
           </div>
-          <div class="hidden" data-g="p">z</div>
-          <div class="hidden" data-g="e">t</div>
-          <div class="hidden" data-g="e">v</div>
-          <div class="fade-in">
-            <h3 class="text-xl font-semibold mb-4">Skills</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="skill-pill">Ruby</span>
-              <span class="skill-pill">Ruby on Rails</span>
-              <span class="skill-pill">PostgreSQL / MySQL</span>
-              <span class="skill-pill">REST API</span>
-              <span class="skill-pill">RSpec</span>
-              <span class="skill-pill">JavaScript / TypeScript</span>
-              <span class="skill-pill">React</span>
-              <span class="skill-pill">Docker</span>
-              <span class="skill-pill">AWS</span>
-            </div>
-            <h3 class="text-xl font-semibold mt-8 mb-4">Languages</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="skill-pill">English</span>
-              <span class="skill-pill">Russian (Native)</span>
-            </div>
+          <div class="min-w-0 flex-[999_1_520px]">
+            <p class="text-lg leading-relaxed">Developed and maintained a web dashboard for Cisco Meraki network device management, used by enterprise customers.</p>
+            <ul class="mt-5 flex flex-col gap-3 text-base leading-relaxed text-[#33333A]">
+              <li class="flex gap-3.5"><span class="mt-[9px] h-2 w-2 flex-none rounded-full bg-ink" aria-hidden="true"></span><span>Optimized the bulk route update action: 10× faster after removing N+1 queries and caching repeated calculations.</span></li>
+              <li class="flex gap-3.5"><span class="mt-[9px] h-2 w-2 flex-none rounded-full bg-ink" aria-hidden="true"></span><span>Wrote RSpec tests for new and existing features, with ~90% coverage of contributed code.</span></li>
+              <li class="flex gap-3.5"><span class="mt-[9px] h-2 w-2 flex-none rounded-full bg-ink" aria-hidden="true"></span><span>Optimized database queries and API performance (Ruby on Rails, PostgreSQL, background jobs).</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="fade-in flex flex-wrap gap-8 border-t border-ink py-10">
+          <div class="flex-[1_1_280px]">
+            <h3 class="font-display text-4xl font-extrabold leading-none tracking-[-0.03em]">Ribose Inc</h3>
+            <p class="mt-3 font-semibold">Senior Ruby Engineer</p>
+            <p class="mt-1 font-mono text-[13px] text-dim">Central Hong Kong</p>
+          </div>
+          <div class="min-w-0 flex-[999_1_520px]">
+            <p class="text-lg leading-relaxed">Led development of Relaton, part of the open-source <a target="_blank" rel="noopener" href="https://github.com/metanorma" class="text-link">Metanorma</a> project for standards publishing.</p>
+            <ul class="mt-5 flex flex-col gap-3 text-base leading-relaxed text-[#33333A]">
+              <li class="flex gap-3.5"><span class="mt-[9px] h-2 w-2 flex-none rounded-full bg-ink" aria-hidden="true"></span><span>Designed ETL pipelines that collect and normalize 600k+ standards documents from many sources.</span></li>
+              <li class="flex gap-3.5"><span class="mt-[9px] h-2 w-2 flex-none rounded-full bg-ink" aria-hidden="true"></span><span>Made metadata retrieval 5× faster with concurrent fetching.</span></li>
+              <li class="flex gap-3.5"><span class="mt-[9px] h-2 w-2 flex-none rounded-full bg-ink" aria-hidden="true"></span><span>Delivered open-source gems downloaded 400k+ times.</span></li>
+              <li class="flex gap-3.5"><span class="mt-[9px] h-2 w-2 flex-none rounded-full bg-ink" aria-hidden="true"></span><span>Reviewed team pull requests and gave technical guidance.</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="fade-in flex flex-wrap gap-8 border-t border-ink py-10">
+          <div class="flex-[1_1_280px]">
+            <h3 class="font-display text-4xl font-extrabold leading-none tracking-[-0.03em]">Independent Contractor</h3>
+            <p class="mt-3 font-semibold">Ruby on Rails Developer</p>
+            <p class="mt-1 font-mono text-[13px] text-dim">Remote</p>
+          </div>
+          <div class="min-w-0 flex-[999_1_520px]">
+            <p class="text-lg leading-relaxed">Built and maintained Rails applications for B2B clients, from design through deployment.</p>
+            <ul class="mt-5 flex flex-col gap-3 text-base leading-relaxed text-[#33333A]">
+              <li class="flex gap-3.5"><span class="mt-[9px] h-2 w-2 flex-none rounded-full bg-ink" aria-hidden="true"></span><span>Supported Ruck.us and Win.GOP, a SaaS toolbox for state and local political campaigns.</span></li>
+              <li class="flex gap-3.5"><span class="mt-[9px] h-2 w-2 flex-none rounded-full bg-ink" aria-hidden="true"></span><span>Contributed a REST API and OAuth/OpenID login to the open-source Docker registry Portus.</span></li>
+              <li class="flex gap-3.5"><span class="mt-[9px] h-2 w-2 flex-none rounded-full bg-ink" aria-hidden="true"></span><span>Integrated Stripe, Twilio, and OAuth; implemented JWT authentication and role-based authorization.</span></li>
+            </ul>
+            <p class="mt-5 text-base">See my <a target="_blank" rel="noopener" href="https://www.upwork.com/freelancers/~018706a98542db0235" class="text-link">Upwork profile</a>.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Portfolio -->
-    <section id="portfolio" class="section-padding bg-gray-50">
-      <div class="max-w-6xl mx-auto px-6">
-        <h2 class="section-title">Projects</h2>
-        <div class="grid md:grid-cols-2 gap-6 mt-10">
-
-          <!-- Ledgerly -->
-          <div class="project-card fade-in">
-            <div class="flex justify-between items-start mb-3">
-              <h3 class="text-xl font-bold">Small Business Accounting</h3>
-              <div class="flex flex-wrap justify-end gap-1">
-                <span class="tech-tag">React</span>
-                <span class="tech-tag">TypeScript</span>
-                <span class="tech-tag">Hono</span>
-                <span class="tech-tag">Cloudflare D1</span>
-              </div>
-            </div>
-            <p class="text-base text-gray-600 mb-4">Simple accounting app for small companies. Covers invoices, bills, expenses, and a double-entry ledger. Generates profit and loss, balance sheet, and trial balance reports.</p>
-            <div class="flex gap-2">
-              <a href="https://ledgerly.crew-desk.com" target="_blank" rel="noopener" class="btn-primary">Visit Website</a>
-            </div>
-          </div>
-
-          <!-- Crew-Desk -->
-          <div class="project-card fade-in">
-            <div class="flex justify-between items-start mb-3">
-              <h3 class="text-xl font-bold">Field Service SaaS</h3>
-              <div class="flex flex-wrap justify-end gap-1">
-                <span class="tech-tag">RoR</span>
-                <span class="tech-tag">Stripe</span>
-                <span class="tech-tag">SQL</span>
-                <span class="tech-tag">Stimulus</span>
-              </div>
-            </div>
-            <p class="text-base text-gray-600 mb-4">Cloud-based field service management platform for small trade businesses (plumbing, electrical, HVAC, landscaping). Handles job tracking from quote to payment, dispatch scheduling, Stripe invoicing, and automated SMS appointment reminders.</p>
-            <div class="flex gap-2">
-              <a href="https://crew-desk.com" target="_blank" rel="noopener" class="btn-primary">Visit Website</a>
-            </div>
-          </div>
-
-          <!-- Rails Schema -->
-          <div class="project-card fade-in">
-            <div class="flex justify-between items-start mb-3">
-              <h3 class="text-xl font-bold">Database Visualization Tool</h3>
-              <div class="flex flex-wrap justify-end gap-1">
-                <span class="tech-tag">RoR</span>
-                <span class="tech-tag">HTML</span>
-                <span class="tech-tag">CSS</span>
-                <span class="tech-tag">JavaScript</span>
-              </div>
-            </div>
-            <p class="text-base text-gray-600 mb-4">Built an interactive schema visualization tool for Rails developers. Introspects models, associations, and columns, then generates a self-contained HTML entity-relationship diagram.</p>
-            <div class="flex gap-2">
-              <a href="https://github.com/andrew2net/rails-schema" target="_blank" rel="noopener" class="btn-primary">Project</a>
-              <a href="https://andrew2net.github.io/rails-schema/" target="_blank" rel="noopener" class="btn-primary">Example</a>
-            </div>
-          </div>
-
-          <!-- CISCO/Meraki -->
-          <div class="project-card fade-in">
-            <div class="flex justify-between items-start mb-3">
-              <h3 class="text-xl font-bold">Enterprise Network Dashboard</h3>
-              <div class="flex flex-wrap justify-end gap-1">
-                <span class="tech-tag">RoR</span>
-                <span class="tech-tag">REST API</span>
-                <span class="tech-tag">SQL</span>
-                <span class="tech-tag">Git</span>
-              </div>
-            </div>
-            <p class="text-base text-gray-600">Cloud-based management platform for Cisco enterprise customers. Achieved 10x performance improvement on bulk route updates by eliminating N+1 queries and implementing caching.</p>
-          </div>
-
-          <!-- Relaton -->
-          <div class="project-card fade-in">
-            <div class="flex justify-between items-start mb-3">
-              <h3 class="text-xl font-bold">Standards Data Platform</h3>
-              <div class="flex flex-wrap justify-end gap-1">
-                <span class="tech-tag">Ruby</span>
-                <span class="tech-tag">XML</span>
-                <span class="tech-tag">XPath</span>
-                <span class="tech-tag">RegEx</span>
-              </div>
-            </div>
-            <p class="text-base text-gray-600 mb-4">ETL pipelines processing 600k+ documents for an international standards organization. Delivered open-source gems downloaded 400k+ times with 5x faster data retrieval.</p>
-            <div class="flex gap-2">
-              <a href="https://github.com/relaton" target="_blank" rel="noopener" class="btn-primary">Project</a>
-              <a href="https://www.relaton.org" target="_blank" rel="noopener" class="btn-primary">Spec</a>
-            </div>
-          </div>
-
-          <!-- Ruck.us -->
-          <div class="project-card fade-in">
-            <div class="flex justify-between items-start mb-3">
-              <h3 class="text-xl font-bold">Political Campaign SaaS</h3>
-              <div class="flex flex-wrap justify-end gap-1">
-                <span class="tech-tag">RoR</span>
-                <span class="tech-tag">SQL</span>
-                <span class="tech-tag">HTML</span>
-                <span class="tech-tag">CSS</span>
-                <span class="tech-tag">JS</span>
-              </div>
-            </div>
-            <p class="text-base text-gray-600 mb-4">Cost-effective digital toolbox for state and local political campaigns. Full-stack SaaS application with Stripe payments, Twilio messaging, and OAuth integration.</p>
-            <div class="flex gap-2">
-              <a href="https://github.com/andrew2net/ruckus" target="_blank" rel="noopener" class="btn-primary">Project</a>
-            </div>
-          </div>
-
-          <!-- Portus API -->
-          <div class="project-card fade-in">
-            <div class="flex justify-between items-start mb-3">
-              <h3 class="text-xl font-bold">Docker Registry API</h3>
-              <div class="flex flex-wrap justify-end gap-1">
-                <span class="tech-tag">RoR</span>
-                <span class="tech-tag">SQL</span>
-                <span class="tech-tag">REST API</span>
-                <span class="tech-tag">Swagger</span>
-              </div>
-            </div>
-            <p class="text-base text-gray-600 mb-4">REST API for the open-source Docker registry authorization server Portus. Designed and implemented endpoints for user and token management with Swagger documentation.</p>
-            <div class="flex gap-2">
-              <a href="https://github.com/SUSE/Portus/pull/1299" target="_blank" rel="noopener" class="btn-primary">Project</a>
-            </div>
-          </div>
-
-          <!-- Portus OAuth -->
-          <div class="project-card fade-in">
-            <div class="flex justify-between items-start mb-3">
-              <h3 class="text-xl font-bold">Social Login Integration</h3>
-              <div class="flex flex-wrap justify-end gap-1">
-                <span class="tech-tag">RoR</span>
-                <span class="tech-tag">HTML</span>
-                <span class="tech-tag">CSS</span>
-                <span class="tech-tag">OAuth</span>
-                <span class="tech-tag">Vue.js</span>
-              </div>
-            </div>
-            <p class="text-base text-gray-600 mb-4">OAuth/OpenID implementation for the enterprise Docker platform Portus. Added social login support with a Vue.js settings interface.</p>
-            <div class="flex gap-2">
-              <a href="https://github.com/SUSE/Portus/pull/1300" target="_blank" rel="noopener" class="btn-primary">Project</a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience -->
-    <section id="experience" class="section-padding bg-white">
-      <div class="max-w-4xl mx-auto px-6">
-        <h2 class="section-title">Experience</h2>
-        <div class="mt-10">
-
-          <div class="timeline-item fade-in">
-            <h3 class="text-xl font-bold">GlobalLogic</h3>
-            <p class="text-lg text-blue-600 font-medium">Senior Software Engineer <span class="text-gray-400 font-normal">· Santa Clara, CA</span></p>
-            <p class="mt-3 text-base text-gray-600">Developed and maintained a web dashboard for Cisco Meraki network device management, used by enterprise customers.</p>
-            <ul class="list-disc pl-5 mt-3 space-y-1 text-base text-gray-600">
-              <li>Optimized the bulk route update action: 10x faster after removing N+1 queries and caching repeated calculations.</li>
-              <li>Wrote RSpec tests for new and existing features, with ~90% coverage of contributed code.</li>
-              <li>Optimized database queries and API performance (Ruby on Rails, PostgreSQL, background jobs).</li>
-            </ul>
-          </div>
-
-          <div class="timeline-item fade-in">
-            <h3 class="text-xl font-bold">Ribose Inc</h3>
-            <p class="text-lg text-blue-600 font-medium">Senior Ruby Engineer <span class="text-gray-400 font-normal">· Central Hong Kong</span></p>
-            <p class="mt-3 text-base text-gray-600">Led development of Relaton, part of the open-source <a target="_blank" rel="noopener" href="https://github.com/metanorma">Metanorma</a> project for standards publishing.</p>
-            <ul class="list-disc pl-5 mt-3 space-y-1 text-base text-gray-600">
-              <li>Designed ETL pipelines that collect and normalize 600k+ standards documents from many sources.</li>
-              <li>Made metadata retrieval 5x faster with concurrent fetching.</li>
-              <li>Delivered open-source gems downloaded 400k+ times.</li>
-              <li>Reviewed team pull requests and gave technical guidance.</li>
-            </ul>
-          </div>
-
-          <div class="timeline-item fade-in">
-            <h3 class="text-xl font-bold">Independent Contractor</h3>
-            <p class="text-lg text-blue-600 font-medium">Ruby on Rails Developer <span class="text-gray-400 font-normal">· Remote</span></p>
-            <p class="mt-3 text-base text-gray-600">Built and maintained Rails applications for B2B clients, from design through deployment.</p>
-            <ul class="list-disc pl-5 mt-3 space-y-1 text-base text-gray-600">
-              <li>Supported Ruck.us and Win.GOP, a SaaS toolbox for state and local political campaigns.</li>
-              <li>Contributed a REST API and OAuth/OpenID login to the open-source Docker registry Portus.</li>
-              <li>Integrated Stripe, Twilio, and OAuth; implemented JWT authentication and role-based authorization.</li>
-            </ul>
-            <p class="mt-3 text-base text-gray-600">See my <a target="_blank" rel="noopener" href="https://www.upwork.com/freelancers/~018706a98542db0235">Upwork profile</a>.</p>
-          </div>
-
-        </div>
-      </div>
-    </section>
+    <div class="hidden" data-g="p">z</div>
+    <div class="hidden" data-g="e">t</div>
+    <div class="hidden" data-g="e">v</div>
 
     <!-- Testimonials -->
-    <section id="testimonials" class="section-padding bg-gray-50">
-      <div class="max-w-6xl mx-auto px-6">
-        <h2 class="section-title">Recommendations</h2>
-        <div class="grid md:grid-cols-3 gap-6 mt-10">
-
-          <div class="testimonial-card fade-in">
-            <p class="text-base text-gray-600 italic mb-4">"Andrei was a terrific help. He's very responsive, very professional, and tries to find the lease expensive solutions. I would recommend him highly."</p>
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm">ND</div>
-              <div>
-                <p class="font-semibold text-sm">Natan Daschle</p>
-                <p class="text-xs text-gray-500">CEO, Ruck.us</p>
-              </div>
-            </div>
+    <section id="testimonials" class="on-paper rounded-b-[40px] bg-paper px-6 pb-28 text-ink md:pb-32">
+      <div class="mx-auto max-w-6xl">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow mb-6">04 — Recommendations</p>
+            <h2 class="section-heading">What people say</h2>
           </div>
+          <p class="section-lead">From founders and CTOs I worked with.</p>
+        </div>
+        <div class="grid gap-4 md:grid-cols-3">
 
-          <div class="testimonial-card fade-in">
-            <p class="text-base text-gray-600 italic mb-4">"It was great working with Andrei and under other circumstances, I would have continued the contract indefinitely. He was very understanding, worked great with the team, kept up with consistent communication, and delivered work in a timely fashion. Hope to work with him in the future!"</p>
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm">JT</div>
-              <div>
-                <p class="font-semibold text-sm">Joe Tebaldi</p>
-                <p class="text-xs text-gray-500">Founder, flexx</p>
-              </div>
+          <figure class="fade-in flex flex-col justify-between gap-8 rounded-[28px] border border-[#DDDDD6] bg-white p-9">
+            <div>
+              <svg width="40" height="32" viewBox="0 0 40 32" aria-hidden="true"><path d="M0 32V18C0 8 5 2 15 0l2 4c-6 2-9 6-9 12h8v16H0zm22 0V18c0-10 5-16 15-18l2 4c-6 2-9 6-9 12h8v16H22z" fill="#0B0B0C"/></svg>
+              <blockquote class="mt-5 text-lg leading-relaxed">“Andrei was a terrific help. He's very responsive, very professional, and tries to find the least expensive solutions. I would recommend him highly.”</blockquote>
             </div>
-          </div>
+            <figcaption class="flex items-center gap-3.5">
+              <span class="flex h-12 w-12 items-center justify-center rounded-full bg-ink font-mono text-sm font-medium text-paper" aria-hidden="true">ND</span>
+              <span class="flex flex-col">
+                <span class="text-[15px] font-semibold">Natan Daschle</span>
+                <span class="text-sm text-dim">CEO, Ruck.us</span>
+              </span>
+            </figcaption>
+          </figure>
 
-          <div class="testimonial-card fade-in">
-            <p class="text-base text-gray-600 italic mb-4">"Andrew is not only a good software engineer but also someone who is able to transform ideas and concepts into products, without needing to explain every step. Looking forward to work with him on next tasks."</p>
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm">VB</div>
-              <div>
-                <p class="font-semibold text-sm">Vadim Bauer</p>
-                <p class="text-xs text-gray-500">CTO, 8gears</p>
-              </div>
+          <figure class="fade-in flex flex-col justify-between gap-8 rounded-[28px] border border-[#DDDDD6] bg-white p-9">
+            <div>
+              <svg width="40" height="32" viewBox="0 0 40 32" aria-hidden="true"><path d="M0 32V18C0 8 5 2 15 0l2 4c-6 2-9 6-9 12h8v16H0zm22 0V18c0-10 5-16 15-18l2 4c-6 2-9 6-9 12h8v16H22z" fill="#0B0B0C"/></svg>
+              <blockquote class="mt-5 text-lg leading-relaxed">“It was great working with Andrei and under other circumstances, I would have continued the contract indefinitely. He was very understanding, worked great with the team, kept up with consistent communication, and delivered work in a timely fashion. Hope to work with him in the future!”</blockquote>
             </div>
-          </div>
+            <figcaption class="flex items-center gap-3.5">
+              <span class="flex h-12 w-12 items-center justify-center rounded-full bg-ink font-mono text-sm font-medium text-paper" aria-hidden="true">JT</span>
+              <span class="flex flex-col">
+                <span class="text-[15px] font-semibold">Joe Tebaldi</span>
+                <span class="text-sm text-dim">Founder, flexx</span>
+              </span>
+            </figcaption>
+          </figure>
+
+          <figure class="fade-in flex flex-col justify-between gap-8 rounded-[28px] border border-[#DDDDD6] bg-white p-9">
+            <div>
+              <svg width="40" height="32" viewBox="0 0 40 32" aria-hidden="true"><path d="M0 32V18C0 8 5 2 15 0l2 4c-6 2-9 6-9 12h8v16H0zm22 0V18c0-10 5-16 15-18l2 4c-6 2-9 6-9 12h8v16H22z" fill="#0B0B0C"/></svg>
+              <blockquote class="mt-5 text-lg leading-relaxed">“Andrew is not only a good software engineer but also someone who is able to transform ideas and concepts into products, without needing to explain every step. Looking forward to work with him on next tasks.”</blockquote>
+            </div>
+            <figcaption class="flex items-center gap-3.5">
+              <span class="flex h-12 w-12 items-center justify-center rounded-full bg-ink font-mono text-sm font-medium text-paper" aria-hidden="true">VB</span>
+              <span class="flex flex-col">
+                <span class="text-[15px] font-semibold">Vadim Bauer</span>
+                <span class="text-sm text-dim">CTO, 8gears</span>
+              </span>
+            </figcaption>
+          </figure>
 
         </div>
       </div>
@@ -453,10 +624,10 @@
     </main>
 
     <!-- Contact / Footer -->
-    <footer id="contact" class="bg-slate-900 text-white py-16">
-      <div class="max-w-6xl mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center mb-4">Get in Touch</h2>
-        <p class="text-center text-gray-400 text-lg mb-10">Open to Software Engineer roles. Contact me by email or LinkedIn.</p>
+    <footer id="contact" class="px-6 pb-12 pt-28 md:pt-32">
+      <div class="mx-auto max-w-6xl">
+        <p class="eyebrow mb-6">05 — Contact</p>
+        <h2 class="font-display text-[clamp(56px,10vw,152px)] font-extrabold leading-[0.88] tracking-[-0.05em]">Let’s build<br>what’s next<span class="text-lime">.</span></h2>
         <div class="hidden" data-g="p">M</div>
         <div class="hidden" data-g="e">Q</div>
         <div class="hidden" data-g="e">G</div>
@@ -482,58 +653,59 @@
         <div class="hidden" data-g="e">=</div>
         <div class="hidden" data-g="e">=</div>
 
-        <div class="flex flex-col md:flex-row justify-center items-center gap-8 mb-10">
-          <!-- Phone -->
-          <div class="flex items-center gap-3">
-            <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-            <div title="Click to reveal">
-              <a id="hidentel" href="#" class="text-transparent hover:text-transparent visited:text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-slate-900 no-underline">+1 704 </a><span class="italic cursor-pointer text-blue-400">click to reveal</span>
-            </div>
-          </div>
+        <div class="mt-16 flex flex-wrap items-center justify-between gap-8 border-t border-line pt-8">
+          <p class="max-w-[520px] flex-[1_1_360px] text-xl leading-relaxed text-soft">Open to Software Engineer roles. Contact me by email or LinkedIn.</p>
+          <p class="flex items-center gap-2.5 font-mono text-sm text-muted">
+            <svg class="h-5 w-5 text-lime" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+            Charlotte, US
+          </p>
+        </div>
 
+        <div class="mt-8 flex flex-wrap items-center gap-3">
           <!-- Email -->
-          <div class="flex items-center gap-3">
-            <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-            <div title="Click to reveal">
-              <a id="hidenemail" href="#" class="text-transparent hover:text-transparent visited:text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-slate-900 no-underline">andr... </a><span class="italic cursor-pointer text-blue-400">click to reveal</span>
-            </div>
+          <div class="contact-pill" title="Click to reveal">
+            <svg class="h-5 w-5 flex-none text-lime" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+            <a id="hidenemail" href="#" class="contact-masked">andr... </a><span class="text-sm italic text-lime">click to reveal</span>
           </div>
 
-          <!-- Location -->
-          <div class="flex items-center gap-3">
-            <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-            <span class="text-lg">Charlotte, US</span>
+          <!-- Phone -->
+          <div class="contact-pill" title="Click to reveal">
+            <svg class="h-5 w-5 flex-none text-lime" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+            <a id="hidentel" href="#" class="contact-masked">+1 704 </a><span class="text-sm italic text-lime">click to reveal</span>
+          </div>
+
+          <!-- Social Links -->
+          <div id="social-links" class="flex gap-3">
+            <a href="https://www.linkedin.com/in/andrei-kislichenko/" class="inline-flex h-14 w-14 items-center justify-center rounded-full border border-line2 transition-colors hover:border-lime hover:text-lime" target="_blank" rel="noopener" aria-label="LinkedIn profile" data-social="linkedin">
+              <svg class="h-5 w-5 fill-current" aria-hidden="true" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                <g><path d="M218.123122,218.127392 L180.191928,218.127392 L180.191928,158.724263 C180.191928,144.559023 179.939053,126.323993 160.463756,126.323993 C140.707926,126.323993 137.685284,141.757585 137.685284,157.692986 L137.685284,218.123441 L99.7540894,218.123441 L99.7540894,95.9665207 L136.168036,95.9665207 L136.168036,112.660562 L136.677736,112.660562 C144.102746,99.9650027 157.908637,92.3824528 172.605689,92.9280076 C211.050535,92.9280076 218.138927,118.216023 218.138927,151.114151 L218.123122,218.127392 Z M56.9550587,79.2685282 C44.7981969,79.2707099 34.9413443,69.4171797 34.9391618,57.260052 C34.93698,45.1029244 44.7902948,35.2458562 56.9471566,35.2436736 C69.1040185,35.2414916 78.9608713,45.0950217 78.963054,57.2521493 C78.9641017,63.090208 76.6459976,68.6895714 72.5186979,72.8184433 C68.3913982,76.9473153 62.7929898,79.26748 56.9550587,79.2685282 M75.9206558,218.127392 L37.94995,218.127392 L37.94995,95.9665207 L75.9206558,95.9665207 L75.9206558,218.127392 Z M237.033403,0.0182577091 L18.8895249,0.0182577091 C8.57959469,-0.0980923971 0.124827038,8.16056231 -0.001,18.4706066 L-0.001,237.524091 C0.120519052,247.839103 8.57460631,256.105934 18.8895249,255.9977 L237.033403,255.9977 C247.368728,256.125818 255.855922,247.859464 255.999,237.524091 L255.999,18.4548016 C255.851624,8.12438979 247.363742,-0.133792868 237.033403,0.000790807055"></path></g>
+              </svg>
+            </a>
+            <a href="https://github.com/andrew2net" class="inline-flex h-14 w-14 items-center justify-center rounded-full border border-line2 transition-colors hover:border-lime hover:text-lime" target="_blank" rel="noopener" aria-label="GitHub profile" data-social="github">
+              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385c.6.105.825-.255.825-.57c0-.285-.015-1.23-.015-2.235c-3.015.555-3.795-.735-4.035-1.41c-.135-.345-.72-1.410-1.23-1.695c-.42-.225-1.02-.78-.015-.795c.945-.015 1.62.87 1.845 1.23c1.08 1.815 2.805 1.305 3.495.99c.105-.78.42-1.305.765-1.605c-2.67-.3-5.46-1.335-5.46-5.925c0-1.305.465-2.385 1.23-3.225c-.12-.3-.54-1.53.12-3.18c0 0 1.005-.315 3.3 1.23c.96-.27 1.98-.405 3-.405s2.040.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23c.66 1.65.24 2.88.12 3.18c.765.84 1.23 1.905 1.23 3.225c0 4.605-2.805 5.625-5.475 5.925c.435.375.81 1.095.81 2.22c0 1.605-.015 2.895-.015 3.3c0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" fill="currentColor" />
+              </svg>
+            </a>
           </div>
         </div>
 
-        <!-- Social Links -->
-        <div id="social-links" class="flex justify-center gap-4 mb-10">
-          <a href="https://www.linkedin.com/in/andrei-kislichenko/" class="bg-blue-600 hover:bg-blue-500 p-3 rounded-lg text-white no-underline hover:no-underline visited:text-white transition-colors" target="_blank" rel="noopener" aria-label="LinkedIn profile" data-social="linkedin">
-            <svg class="w-6 h-6 fill-current" role="img" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
-              <g><path d="M218.123122,218.127392 L180.191928,218.127392 L180.191928,158.724263 C180.191928,144.559023 179.939053,126.323993 160.463756,126.323993 C140.707926,126.323993 137.685284,141.757585 137.685284,157.692986 L137.685284,218.123441 L99.7540894,218.123441 L99.7540894,95.9665207 L136.168036,95.9665207 L136.168036,112.660562 L136.677736,112.660562 C144.102746,99.9650027 157.908637,92.3824528 172.605689,92.9280076 C211.050535,92.9280076 218.138927,118.216023 218.138927,151.114151 L218.123122,218.127392 Z M56.9550587,79.2685282 C44.7981969,79.2707099 34.9413443,69.4171797 34.9391618,57.260052 C34.93698,45.1029244 44.7902948,35.2458562 56.9471566,35.2436736 C69.1040185,35.2414916 78.9608713,45.0950217 78.963054,57.2521493 C78.9641017,63.090208 76.6459976,68.6895714 72.5186979,72.8184433 C68.3913982,76.9473153 62.7929898,79.26748 56.9550587,79.2685282 M75.9206558,218.127392 L37.94995,218.127392 L37.94995,95.9665207 L75.9206558,95.9665207 L75.9206558,218.127392 Z M237.033403,0.0182577091 L18.8895249,0.0182577091 C8.57959469,-0.0980923971 0.124827038,8.16056231 -0.001,18.4706066 L-0.001,237.524091 C0.120519052,247.839103 8.57460631,256.105934 18.8895249,255.9977 L237.033403,255.9977 C247.368728,256.125818 255.855922,247.859464 255.999,237.524091 L255.999,18.4548016 C255.851624,8.12438979 247.363742,-0.133792868 237.033403,0.000790807055"></path></g>
-            </svg>
-          </a>
-          <a href="https://github.com/andrew2net" class="bg-gray-700 hover:bg-gray-600 p-3 rounded-lg text-white no-underline hover:no-underline visited:text-white transition-colors" target="_blank" rel="noopener" aria-label="GitHub profile" data-social="github">
-            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" class="w-6 h-6" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-              <g fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385c.6.105.825-.255.825-.57c0-.285-.015-1.23-.015-2.235c-3.015.555-3.795-.735-4.035-1.41c-.135-.345-.72-1.41-1.23-1.695c-.42-.225-1.02-.78-.015-.795c.945-.015 1.62.87 1.845 1.23c1.08 1.815 2.805 1.305 3.495.99c.105-.78.42-1.305.765-1.605c-2.67-.3-5.46-1.335-5.46-5.925c0-1.305.465-2.385 1.23-3.225c-.12-.3-.54-1.53.12-3.18c0 0 1.005-.315 3.3 1.23c.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23c.66 1.65.24 2.88.12 3.18c.765.84 1.23 1.905 1.23 3.225c0 4.605-2.805 5.625-5.475 5.925c.435.375.81 1.095.81 2.22c0 1.605-.015 2.895-.015 3.3c0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" fill="currentColor" /></g>
-            </svg>
-          </a>
+        <div class="mt-24 flex flex-wrap justify-between gap-4 font-mono text-[13px] text-muted">
+          <span>© Andrei Kislichenko · Charlotte, US</span>
+          <span>“The best way to predict the future is to build it.”</span>
         </div>
-
-        <p class="text-center text-gray-400 text-lg italic">"The best way to predict the future is to build it."</p>
       </div>
     </footer>
 
     <!-- Cookie consent banner -->
-    <div id="cookie-banner" class="hidden fixed bottom-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur text-white px-6 py-4">
-      <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center gap-4 justify-between">
-        <p class="text-sm m-0">
+    <div id="cookie-banner" class="fixed inset-x-4 bottom-4 z-50 mx-auto hidden max-w-4xl rounded-3xl border border-line bg-panel/95 px-6 py-4 backdrop-blur-xl">
+      <div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
+        <p class="m-0 text-sm text-soft">
           This site uses anonymous Google Analytics to understand how visitors use it.
           By continuing you consent to this; you can decline at any time.
         </p>
-        <div class="flex gap-3 shrink-0">
-          <button id="cookie-decline" class="px-4 py-2 text-sm rounded border border-white/40 text-white hover:bg-white/10">Decline</button>
-          <button id="cookie-accept" class="btn-primary px-4 py-2 text-sm rounded">Accept</button>
+        <div class="flex shrink-0 gap-3">
+          <button id="cookie-decline" class="min-h-[44px] rounded-full border border-line2 px-5 text-sm text-paper transition-colors hover:border-lime">Decline</button>
+          <button id="cookie-accept" class="min-h-[44px] rounded-full bg-lime px-5 text-sm font-semibold text-ink transition-colors hover:bg-paper">Accept</button>
         </div>
       </div>
     </div>
