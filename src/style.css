@@ -182,7 +182,13 @@
     @apply text-[17px] leading-relaxed text-soft;
   }
 
+  /* Short description, for the book on small screens only */
+  .book-short {
+    @apply hidden text-base leading-snug text-soft;
+  }
+
   .featured-lime .book-desc,
+  .featured-lime .book-short,
   .featured-lime .tech-tags {
     @apply text-ink;
   }
@@ -357,20 +363,33 @@
 
 /* The stage (the pages and the dots) scrolls up with the page until it is centered
    in the window. Then it stays there while the pages turn. On short windows it stays
-   below the menu bar. The stage is the page height plus 60px for the dots. */
+   below the menu bar. The stage is the page height plus 60px for the dots.
+   --book-vh is the window height. On phones "svh" ignores the address bar, which
+   shows and hides during a scroll, so the book does not jump. */
 .book.is-active {
+  /* A turning page comes toward the viewer and can grow past the window edge.
+     "clip" stops a sideways scroll and, unlike "hidden", keeps the sticky stage working. */
+  overflow-x: clip;
+  --book-vh: 100vh;
+  --book-h: min(620px, calc(var(--book-vh) - 190px));
   margin-top: 8px;
+}
+
+@supports (height: 100svh) {
+  .book.is-active {
+    --book-vh: 100svh;
+  }
 }
 
 .book.is-active .book-stage {
   position: sticky;
-  top: max(96px, calc((100vh - min(620px, 100vh - 190px) - 60px) / 2));
+  top: max(88px, calc((var(--book-vh) - var(--book-h) - 60px) / 2));
 }
 
 .book.is-active .book-pages {
   display: block;
   position: relative;
-  height: min(620px, calc(100vh - 190px));
+  height: var(--book-h);
 }
 
 /* Each page turns on its left edge, like a page on a book spine.
@@ -446,6 +465,44 @@
 .book-dot[aria-current="true"]::before {
   width: 28px;
   background: #C8F031;
+}
+
+/* The book on phones and tablets: the screenshot on top fills the free space,
+   and a short text goes below it. */
+@media (max-width: 1023px) {
+  .book.is-active .book-page {
+    padding: 16px;
+    border-radius: 24px;
+  }
+
+  .book.is-active .book-page-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .book.is-active .book-shot {
+    flex: 1 1 auto;
+    min-height: 0;
+    height: auto;
+  }
+
+  .book.is-active .book-text {
+    flex: none;
+    gap: 10px;
+  }
+
+  .book.is-active .book-title {
+    font-size: 28px;
+  }
+
+  .book.is-active .book-desc {
+    display: none;
+  }
+
+  .book.is-active .book-short {
+    display: block;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
