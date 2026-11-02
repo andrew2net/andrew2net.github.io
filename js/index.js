@@ -121,13 +121,13 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Project book: the pages turn over forward and back with the scroll position.
-  // The scroll itself stays normal. The book is active only on large screens
+  // The scroll itself stays normal. The book is active on screens at least 560 px high
   // without "reduce motion". Elsewhere the pages are a normal list.
   var book = document.getElementById('project-book');
   if (book && window.matchMedia) {
     var bookPages = [].slice.call(book.querySelectorAll('.book-page'));
     var bookDots = [].slice.call(book.querySelectorAll('.book-dot'));
-    var bookQuery = window.matchMedia('(min-width: 1024px) and (min-height: 640px) and (prefers-reduced-motion: no-preference)');
+    var bookQuery = window.matchMedia('(min-height: 560px) and (prefers-reduced-motion: no-preference)');
     var bookActive = false;
     var bookCurrent = -1;
     var bookFrame = 0;
@@ -141,7 +141,12 @@ document.addEventListener('DOMContentLoaded', function () {
     var bookTargets = bookPages.map(function () { return 0; });
     var bookShown = bookTargets.slice();
 
-    var pageScroll = function () { return window.innerHeight * 0.85; };
+    // The window size when the book was last set up. On phones the address bar shows and
+    // hides during a scroll, so the window height changes a little. A stable height keeps
+    // the page turns steady.
+    var bookViewW = window.innerWidth;
+    var bookViewH = window.innerHeight;
+    var pageScroll = function () { return bookViewH * 0.85; };
 
     // The book's top position (from the top of the window) at which the first page starts
     // to turn: the moment when the stage stops in the middle of the window.
@@ -219,6 +224,8 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     var setBookMode = function () {
+      bookViewW = window.innerWidth;
+      bookViewH = window.innerHeight;
       bookActive = bookQuery.matches;
       book.classList.toggle('is-active', bookActive);
       if (bookActive) {
@@ -264,7 +271,15 @@ document.addEventListener('DOMContentLoaded', function () {
       bookQuery.addListener(setBookMode);
     }
     window.addEventListener('scroll', requestBookUpdate, { passive: true });
-    window.addEventListener('resize', setBookMode);
+    // Set up the book again only after a real size change, not when a phone's
+    // address bar shows or hides.
+    window.addEventListener('resize', function () {
+      if (window.innerWidth === bookViewW && Math.abs(window.innerHeight - bookViewH) < 150) {
+        requestBookUpdate();
+        return;
+      }
+      setBookMode();
+    });
     setBookMode();
   }
 
